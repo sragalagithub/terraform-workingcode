@@ -54,6 +54,8 @@ resource "google_compute_instance" "dev" {
     initialize_params {
       image = "centos-cloud/centos-7"
     }
+    
+    kms_key_self_link = var.cmek_crypto_key
   }
 
   # We can create our own network or use the default one like we did here
