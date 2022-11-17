@@ -59,6 +59,7 @@ resource "google_compute_instance" "dev" {
       # disk_encryption_key{
       # } 
     }
+
     kms_key_self_link = var.cmek_crypto_key
   }
 
@@ -109,6 +110,7 @@ resource "google_compute_instance" "dev" {
   }
 }
 
+
 resource "google_compute_network" "default" {
   name                    = "paddy-test-12747"
   auto_create_subnetworks = "false"
@@ -119,4 +121,6 @@ resource "google_compute_subnetwork" "test-subnet-1" {
   ip_cidr_range = "10.2.0.0/24"
   network       = google_compute_network.default.self_link
   region        = "us-central1"
+
+
 }
