@@ -56,7 +56,6 @@ resource "google_compute_instance" "dev" {
     }
     
     kms_key_self_link = var.cmek_crypto_key
-    disk_encryption_key_raw = var.cmek_crypto_key
   }
 
   # We can create our own network or use the default one like we did here
